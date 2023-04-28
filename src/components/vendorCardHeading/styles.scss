@@ -1,0 +1,10 @@
+.vendor-card-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 4px 0px;
+  &__Label {
+    font-size: smaller;
+    font-weight: bold;
+  }
+}

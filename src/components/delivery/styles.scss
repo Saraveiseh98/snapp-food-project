@@ -1,0 +1,12 @@
+.delivery {
+  display: flex;
+  margin-top: 20px;
+  &__Label {
+    margin-right: 4px;
+    font-size: x-small;
+    font-weight: lighter;
+    &--gray {
+      color: #a3a3a3;
+    }
+  }
+}

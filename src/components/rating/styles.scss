@@ -1,0 +1,35 @@
+$rate-red: #c10914;
+$rate-yellow: #cdd614;
+$rate-green: #305d02;
+
+.rating {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  font-size: x-small;
+
+  &__rate {
+    border-radius: 6px;
+    height: 20px;
+    width: 40px;
+    display: flex;
+    justify-content: space-evenly;
+    &--green {
+      color: $rate-green;
+      background-color: rgba($rate-green, 0.08);
+    }
+    &--yellow {
+      color: $rate-yellow;
+      background-color: rgba($rate-yellow, 0.08);
+    }
+    &--red {
+      color: $rate-red;
+      background-color: rgba($rate-red, 0.08);
+    }
+  }
+
+  &__count {
+    color: #a3a3a3;
+    margin-left: 4px;
+  }
+}
