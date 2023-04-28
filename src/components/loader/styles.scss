@@ -1,0 +1,11 @@
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  &__label {
+    font-size: medium;
+    font-weight: lighter;
+    color: lightgray;
+  }
+}

@@ -4,7 +4,11 @@ import { VendorsActions, VendorsState } from "../types/vendorsTypes";
 const initialState: VendorsState = {
   data: [],
   loading: false,
+  loadingMore: false,
   error: null,
+  totalCount: 0,
+  pageNumber: 0,
+  pageSize: 10,
 };
 
 const reducer = (
@@ -19,7 +23,9 @@ const reducer = (
       };
     case vendorActionTypes.GET_VENDOR_SUCCESS:
       return {
+        ...state,
         data: action.payload.data,
+        totalCount: action.payload.totalCount,
         loading: false,
         error: null,
       };
@@ -29,6 +35,27 @@ const reducer = (
         loading: false,
         error: action.payload.error,
       };
+    case vendorActionTypes.LOAD_MORE_VENDOR_REQUEST:
+      return {
+        ...state,
+        loadingMore: true,
+      };
+    case vendorActionTypes.LOAD_MORE_VENDOR_SUCCESS:
+      return {
+        ...state,
+        loadingMore: false,
+        error: null,
+        data: [...state.data, ...action.payload.data],
+        totalCount: action.payload.totalCount,
+        pageNumber: state.pageNumber + 1,
+      };
+    case vendorActionTypes.LOAD_MORE_VENDOR_FAILURE:
+      return {
+        ...state,
+        loadingMore: false,
+        error: action.payload.error,
+      };
+
     default:
       return state;
   }

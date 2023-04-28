@@ -1,11 +1,16 @@
 import { createBrowserRouter } from "react-router-dom";
-import App from "../App";
+import { HomePage, VendorsPage } from "../pages";
 import { PageDataType, RoutesPath } from "./types/routeTypes";
 
 const pagesData: PageDataType[] = [
   {
     path: RoutesPath.MAIN_ROUTE,
-    element: <App />,
+    element: <HomePage />,
+    title: "main",
+  },
+  {
+    path: RoutesPath.VENDORS_ROUTE,
+    element: <VendorsPage />,
     title: "main",
   },
 ];
