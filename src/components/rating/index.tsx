@@ -1,10 +1,10 @@
-import Label from "../label";
+import { Label } from "../label";
 import { Props, RateColors, RateColorsClassName } from "./type";
 import { rateRangeMapper } from "../../helpers/rateColorMapper";
 import { ReactComponent as StarIcon } from "../../assets/icons/star.svg";
 import "./styles.scss";
 
-const Rating: React.FC<Props> = (props) => {
+export const Rating: React.FC<Props> = (props) => {
   const color = rateRangeMapper(props.rate);
   return (
     <div className="rating">
@@ -18,5 +18,3 @@ const Rating: React.FC<Props> = (props) => {
     </div>
   );
 };
-
-export default Rating;

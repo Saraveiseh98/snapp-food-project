@@ -1,11 +1,10 @@
 import { useEffect } from "react";
 import { useVendorsSelector, useAppDispatch } from "../../hooks";
 import { getVendorsRequest } from "../../redux/actions/vendorsActions";
-import Card from "../../components/vendorCard";
-import "./styles.scss";
+import { VendorCard, Loader } from "../../components";
 import { LoadMore } from "../loadMore";
-import { Loader } from "../../components/loader";
-import Label from "../../components/label";
+import { VendorsError } from "../vendorsError";
+import "./styles.scss";
 
 export const VendorsList: React.FC = () => {
   const {
@@ -26,21 +25,7 @@ export const VendorsList: React.FC = () => {
 
   if (loading) return <Loader active />;
 
-  if (error)
-    return (
-      <div className="error">
-        <Label className="error__message" variant="title">
-          خطای سرور!
-        </Label>
-        <button
-          onClick={() => {
-            dispatch(getVendorsRequest());
-          }}
-        >
-          تلاش مجدد
-        </button>
-      </div>
-    );
+  if (error) return <VendorsError />;
 
   return (
     <div className="vendors-list">
@@ -48,7 +33,7 @@ export const VendorsList: React.FC = () => {
         if (item.type === "TEXT") return null;
         if (item.type === "VENDOR")
           return (
-            <Card
+            <VendorCard
               className="vendors-list__card"
               data={item.data}
               key={item.data.id}

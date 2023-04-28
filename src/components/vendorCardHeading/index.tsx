@@ -1,5 +1,5 @@
-import Label from "../label";
-import Rating from "../rating";
+import { Label } from "../label";
+import { Rating } from "../rating";
 import { Props } from "./type";
 import "./styles.scss";
 

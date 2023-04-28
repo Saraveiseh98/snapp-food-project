@@ -1,4 +1,4 @@
-import Label from "../label";
+import { Label } from "../label";
 import { DeliveryMethod, Props } from "./type";
 import "./styles.scss";
 

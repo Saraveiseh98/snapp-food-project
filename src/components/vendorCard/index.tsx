@@ -1,20 +1,20 @@
 import { FC } from "react";
 import "./styles.scss";
 import { Props } from "./type";
-import Cover from "../cover";
-import Avatar from "../avatar";
-import Label from "../label";
+import { Cover } from "../cover";
+import { Avatar } from "../avatar";
+import { Label } from "../label";
 import { Delivery } from "../delivery";
 import { VendorCardHeading } from "../vendorCardHeading";
 
-const Card: FC<Props> = (props) => {
+export const VendorCard: FC<Props> = (props) => {
   return (
-    <div className={`card ${props.className}`}>
-      <div className="header">
+    <article className={`card ${props.className}`}>
+      <div className="card__header">
         <Cover src={props.data.backgroundImage} />
         <Avatar src={props.data.logo} />
       </div>
-      <div className="body">
+      <div className="card__body">
         <VendorCardHeading
           rate={props.data.rate}
           voteCount={props.data.voteCount}
@@ -28,8 +28,6 @@ const Card: FC<Props> = (props) => {
           deliveryFee={props.data.deliveryFee}
         />
       </div>
-    </div>
+    </article>
   );
 };
-
-export default Card;

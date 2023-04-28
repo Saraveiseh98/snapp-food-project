@@ -16,7 +16,6 @@ instance.interceptors.request.use(
   }
 );
 
-// Add a response interceptor
 instance.interceptors.response.use(
   function (response) {
     console.log("response received successfully");
