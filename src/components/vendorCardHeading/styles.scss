@@ -6,5 +6,9 @@
   &__Label {
     font-size: smaller;
     font-weight: bold;
+    width: 60%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 }
